@@ -30,10 +30,11 @@ Note:
 0 ≤ N ≤ 30.
 */
 
-var fib = function (N) {
-  //   if (N === 0 || N === 1) return N;
-  //   return fib(N - 2) + fib(N - 1);
-  return N;
+var fibanocci = function (N) {
+  if (N === 0 || N === 1) {
+    return N;
+  }
+  return fibanocci(N - 2) + fibanocci(N - 1);
 };
 
-console.log(fib(68));
+console.log(fibanocci(12));
