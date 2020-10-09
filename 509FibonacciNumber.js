@@ -30,4 +30,10 @@ Note:
 0 ≤ N ≤ 30.
 */
 
-var fib = function (N) {};
+var fib = function (N) {
+  //   if (N === 0 || N === 1) return N;
+  //   return fib(N - 2) + fib(N - 1);
+  return N;
+};
+
+console.log(fib(68));
