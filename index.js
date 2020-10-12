@@ -1,20 +1,18 @@
-var isValid = function (s) {
-  var map = {
-    '{': '}',
-    '[': ']',
-    '(': ')',
-  };
+var twoSum = function (nums, target) {
+  let hash = {};
 
-  var stack = [];
-  for (var i = 0; i < s.length; i++) {
-    var z = s[i];
-    if (map[z]) {
-      stack.push(map[z]);
-    } else if (z !== stack.pop()) {
-      return false;
+  for (let i = 0; i < nums.length; i++) {
+    const n = nums[i];
+    if (hash[target - n] !== undefined) {
+      return [hash[target - n], i];
     }
+    hash[n] = i;
+    debugger;
   }
-  return !stack.length;
+  return [];
 };
 
-console.log(isValid(')('));
+let nums = 6;
+let target = [3, 2, 3];
+
+twoSum(nums, target);
