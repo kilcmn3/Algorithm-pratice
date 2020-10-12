@@ -7,12 +7,12 @@ var twoSum = function (nums, target) {
       return [hash[target - n], i];
     }
     hash[n] = i;
-    debugger;
   }
+  console.log('just testing');
   return [];
 };
 
 let nums = 6;
 let target = [3, 2, 3];
 
-twoSum(nums, target);
+console.log(twoSum(nums, target));
