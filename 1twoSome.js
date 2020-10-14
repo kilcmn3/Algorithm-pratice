@@ -41,7 +41,6 @@ var twoSum = function (nums, target) {
       return [hash[target - n], i];
     }
     hash[n] = i;
-    debugger;
   }
   return [];
 };
