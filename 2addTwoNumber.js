@@ -26,6 +26,21 @@ The number of nodes in each linked list is in the range [1, 100].
 It is guaranteed that the list represents a number that does not have leading zeros.
 */
 
+class ListNode {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+
+const l1 = new ListNode(2);
+l1.next = new ListNode(4);
+l1.next.next = new ListNode(3);
+
+const l2 = new ListNode(5);
+l2.next = new ListNode(6);
+l2.next = new ListNode(4);
+
 var addTwoNumbers = function (l1, l2) {
   var List = new ListNode(0);
   var head = List;
@@ -34,36 +49,34 @@ var addTwoNumbers = function (l1, l2) {
 
   while (l1 !== null || l2 !== null || sum > 0) {
     if (l1 !== null) {
+      console.log('l1 ,', l1);
       sum = sum + l1.val;
       l1 = l1.next;
+      console.log('l1 sum is ,', sum);
+      console.log('l1 next is ,', l1);
     }
     if (l2 !== null) {
+      console.log('l2 ,', l2);
       sum = sum + l2.val;
       l2 = l2.next;
+      console.log('l2 sum is ,', sum);
+      console.log('l2 next is ,', l2);
     }
     if (sum >= 10) {
       carry = 1;
       sum = sum - 10;
+      console.log('sum >= 10 ,', sum);
     }
 
     head.next = new ListNode(sum);
     head = head.next;
-
+    console.log('head.next is ,', head.next);
     sum = carry;
+    console.log('sum is', sum);
     carry = 0;
   }
-
+  console.log('return ,', List.next);
   return List.next;
-};
-
-let l1 = {
-  val: 2,
-  next: { val: 4, next: { val: 3, next: null } },
-};
-
-let l2 = {
-  val: 5,
-  next: { val: 6, next: { val: 4, next: null } },
 };
 
 console.log(addTwoNumbers(l1, l2));
