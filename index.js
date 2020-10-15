@@ -1,13 +1,11 @@
 var twoSum = function (nums, target) {
   let hash = {};
-
-  for (let i = 0; i < nums.length; i++) {
-    const n = nums[i];
-    if (hash[target - n] !== undefined) {
-      return [hash[target - n], i];
+  for (var i = 0; i < nums.length; i++) {
+    console.log(hash[target - nums[i]]);
+    if (hash[target - nums[i]] !== undefined) {
+      return [i, hash[target - nums[i]]];
     }
-    hash[n] = i;
-    debugger;
+    hash[nums[i]] = i;
   }
   return [];
 };
@@ -15,4 +13,4 @@ var twoSum = function (nums, target) {
 let nums = 6;
 let target = [3, 2, 3];
 
-twoSum(nums, target);
+console.log(twoSum(nums, target));
