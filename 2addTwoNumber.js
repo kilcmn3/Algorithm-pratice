@@ -49,33 +49,26 @@ var addTwoNumbers = function (l1, l2) {
 
   while (l1 !== null || l2 !== null || sum > 0) {
     if (l1 !== null) {
-      console.log('l1 ,', l1);
       sum = sum + l1.val;
       l1 = l1.next;
-      console.log('l1 sum is ,', sum);
-      console.log('l1 next is ,', l1);
     }
+
     if (l2 !== null) {
-      console.log('l2 ,', l2);
       sum = sum + l2.val;
       l2 = l2.next;
-      console.log('l2 sum is ,', sum);
-      console.log('l2 next is ,', l2);
     }
+
     if (sum >= 10) {
       carry = 1;
       sum = sum - 10;
-      console.log('sum >= 10 ,', sum);
     }
 
     head.next = new ListNode(sum);
     head = head.next;
-    console.log('head.next is ,', head.next);
     sum = carry;
-    console.log('sum is', sum);
     carry = 0;
   }
-  console.log('return ,', List.next);
+
   return List.next;
 };
 

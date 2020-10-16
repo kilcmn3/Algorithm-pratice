@@ -5,11 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Chrome",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/app.js",
             "request": "launch",
-            "type": "pwa-chrome",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "pwa-node"
         },
     ]
 }
