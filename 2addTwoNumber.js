@@ -70,6 +70,7 @@ var addTwoNumbers = function (l1, l2) {
       l2 = l2.next;
     }
   }
+
   if (carry) {
     node.next = new ListNode(carry);
   }
