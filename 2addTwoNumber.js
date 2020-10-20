@@ -42,34 +42,38 @@ l2.next = new ListNode(6);
 l2.next = new ListNode(4);
 
 var addTwoNumbers = function (l1, l2) {
-  var List = new ListNode(0);
-  var head = List;
-  var sum = 0;
-  var carry = 0;
+  let head = new ListNode(0);
+  let node = head;
+  let carry = 0;
 
-  while (l1 !== null || l2 !== null || sum > 0) {
-    if (l1 !== null) {
-      sum = sum + l1.val;
+  while (l1 || l2) {
+    let l1Val = l1 ? l1.val : 0;
+    let l2Val = l2 ? l2.val : 0;
+
+    let sumVal = l1Val + l2Val + carry;
+    carry = 0;
+    let newSum = sumVal;
+
+    if (sumVal > 9) {
+      newSum = sumVal % 10;
+      carry = 1;
+    }
+
+    node.next = new ListNode(newSum);
+    node = node.next;
+
+    if (l1) {
       l1 = l1.next;
     }
 
-    if (l2 !== null) {
-      sum = sum + l2.val;
+    if (l2) {
       l2 = l2.next;
     }
-
-    if (sum >= 10) {
-      carry = 1;
-      sum = sum - 10;
-    }
-
-    head.next = new ListNode(sum);
-    head = head.next;
-    sum = carry;
-    carry = 0;
   }
-
-  return List.next;
+  if (carry) {
+    node.next = new ListNode(carry);
+  }
+  return head.next;
 };
 
 console.log(addTwoNumbers(l1, l2));
