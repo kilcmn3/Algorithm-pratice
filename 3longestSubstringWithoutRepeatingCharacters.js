@@ -49,7 +49,8 @@ var lengthOfLongestSubstring = function (s) {
     map[v] = i;
 
     // indices of current substring is (idx - leftIdx, idx).
-    // +1 because if your substring starts and ends at index 0, it still has a length of 1.
+    // i-left+1 is the width of the substring, where i is the ending index, left is the starting index. Essentially,
+    // i-left+1 is simply the width. Any width of string is calculated as endIndex-startIndex+1 regardless whether the index starts at 0 or not.
     return Math.max(max, i - left + 1);
   }, 0);
 };
