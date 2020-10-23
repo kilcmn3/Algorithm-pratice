@@ -33,26 +33,34 @@ var longestPalindrome = function (str) {
 
   for (let i = 0; i < str.length; i++) {
     let oddPalindrome = expandFromCenter(str, i, i);
-    let eventPalidrome = expandFromCenter(str, i - 1, i);
-
-    if (oddPalindrome > longest.length) {
+    console.log('odPalindrome', oddPalindrome);
+    let evenPalidrome = expandFromCenter(str, i - 1, i);
+    console.log('evenPalidrome', evenPalidrome);
+    if (oddPalindrome.length > longest.length) {
       longest = oddPalindrome;
     }
-    if (eventPalidrome > longest.length) {
-      longest = eventPalidrome;
+    if (evenPalidrome.length > longest.length) {
+      longest = evenPalidrome;
     }
   }
   return longest;
 };
 
-var expandFromCenter = function (str, left, rigth) {
+var expandFromCenter = function (str, left, right) {
   let i = 0;
-  while (str[left - 1] && str[left - 1] === str[rigth + 1]) {
+  while (str[left - i] && str[left - i] === str[right + i]) {
+    console.log('str[left-1] , ', str[left - 1]);
+    console.log('str[right + i], ', str[right + i]);
     i++;
   }
   i--;
-  return str.slice(left - 1, right + i + 1);
+  console.log('hey returning what?', str.slice(left - i, right + i + 1));
+  return str.slice(left - i, right + i + 1);
 };
+
+var str = 'babad'; //3
+
+longestPalindrome(str);
 
 //solution 2
 
