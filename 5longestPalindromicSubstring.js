@@ -86,6 +86,9 @@ var longestPalindrome = function (s) {
       // and actual length of "abba" should be "4"
       // 5 - 0 - 1 === 4
       if (right - left - 1 > max.length) {
+        // b  a  b  a  d
+        // ^   left
+        //             ^ right
         max = s.substring(left + 1, right);
       }
     }
