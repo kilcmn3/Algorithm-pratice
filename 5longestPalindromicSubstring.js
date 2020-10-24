@@ -80,7 +80,7 @@ var longestPalindrome = function (s) {
         right++;
       }
       // here imagine we get into string like
-      // "sabbad", then
+      // "babad", then
       // right = 5
       // left = 0
       // and actual length of "abba" should be "4"
