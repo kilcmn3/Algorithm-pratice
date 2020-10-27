@@ -31,4 +31,21 @@ Constraints:
 -231 <= x <= 231 - 1
 */
 
-var reverse = function (x) {};
+var reverse = function (x) {
+  if (x === 0 || x <= Math.pow(-2, 31)) return 0;
+
+  var output = '';
+
+  x > 0 ? (num = x) : (num = Math.abs(x));
+  num = num.toString().split('');
+
+  for (var i = num.length - 1; i > -1; i--) {
+    output = output + num[i];
+  }
+  if (x > 0) {
+    return parseInt(output) > Math.pow(2, 31) - 1 ? 0 : parseInt(output);
+  } else {
+    output = '-' + output;
+    return parseInt(output) <= Math.pow(-2, 31) ? 0 : parseInt(output);
+  }
+};
