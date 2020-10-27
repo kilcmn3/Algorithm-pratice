@@ -31,6 +31,14 @@ Constraints:
 -231 <= x <= 231 - 1
 */
 
+//Alt solution
+var reverse = function (x) {
+  const absReversed = Math.abs(x).toString().split('').reverse().join('');
+  if (absReversed > 2 ** 31) return 0;
+  return absReversed * Math.sign(x);
+};
+
+//My solution
 var reverse = function (x) {
   if (x === 0 || x <= Math.pow(-2, 31)) return 0;
 
