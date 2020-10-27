@@ -31,4 +31,4 @@ Constraints:
 -231 <= x <= 231 - 1
 */
 
-// var reverse = function (x) {};
+var reverse = function (x) {};
