@@ -50,22 +50,10 @@ s consists of English letters (lower-case and upper-case), digits, ' ', '+', '-'
 
 */
 
-var myAtoi = function(s) {
-    //check first non-whitespace character if it is "-" or "+"
-    //Second check if character is Number or not
-    
-    if(parseInt(s[0]) === NaN || s.length)
-    
-    let output = ""
-    
-    for(let i = 0; i < s.length; i++){
-        
-        let parseNum = parseInt(s[i])
-        
-        if(s[i] === "-" || Number.isInteger(parseNum)){
-            output = output + s[i]
-        }
-    }
-    
-    return output 
+var myAtoi = function (s) {
+  //Maybe need to study for regex
 };
+
+var s = '-42';
+
+console.log(myAtoi(s));
