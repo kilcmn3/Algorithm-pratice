@@ -49,3 +49,5 @@ Constraints:
 s consists of English letters (lower-case and upper-case), digits, ' ', '+', '-' and '.'.
 
 */
+
+var myAtoi = function (s) {};
