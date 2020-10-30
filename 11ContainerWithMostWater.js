@@ -47,7 +47,7 @@ var maxArea = function (height) {
     var right = i + 1;
     var move = 1;
     var minHeight = 0;
-    while (height[right]) {
+    while (right < height.length) {
       minHeight = Math.min(height[i], height[right]);
       area = Math.max(area, minHeight * move);
       right++;
