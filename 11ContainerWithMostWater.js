@@ -34,3 +34,5 @@ n = height.length
 0 <= height[i] <= 3 * 104
 
 */
+
+var maxArea = function (height) {};
