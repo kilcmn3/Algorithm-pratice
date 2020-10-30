@@ -35,4 +35,25 @@ n = height.length
 
 */
 
-var maxArea = function (height) {};
+var maxArea = function (height) {
+  var area = 0;
+  //index - index = length
+  // [1,8,6,2,5,4,8,3,7]
+  // 1 => index 0
+  // 7 => index 8
+  // area = 1 * 8 = 8
+
+  for (var i = 0; i < height.length; i++) {
+    var right = i + 1;
+    var move = 1;
+    var minHeight = 0;
+    while (height[right]) {
+      minHeight = Math.min(height[i], height[right]);
+      area = Math.max(area, minHeight * move);
+      right++;
+      move++;
+    }
+    move = 0;
+  }
+  return area;
+};
