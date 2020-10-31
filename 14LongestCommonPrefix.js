@@ -25,4 +25,18 @@ strs[i] consists of only lower-case English letters.
 
 */
 
-var longestCommonPrefix = function (strs) {};
+//Need to study more
+var longestCommonPrefix = function (strs) {
+  if (!strs.length) return '';
+  if (strs.length === 1) return strs[0];
+
+  return strs.reduce((acc, cur) => {
+    let i = 0;
+    let output = '';
+    while (acc[i] && cur[i] && acc[i] === cur[i]) {
+      output = output + acc[i];
+      i++;
+    }
+    return output;
+  });
+};
