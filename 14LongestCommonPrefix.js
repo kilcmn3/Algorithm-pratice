@@ -24,3 +24,5 @@ Constraints:
 strs[i] consists of only lower-case English letters.
 
 */
+
+var longestCommonPrefix = function (strs) {};
