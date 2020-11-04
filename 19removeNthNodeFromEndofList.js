@@ -35,9 +35,36 @@ The number of nodes in the list is sz.
  *     this.next = (next===undefined ? null : next)
  * }
  */
-/**
- * @param {ListNode} head
- * @param {number} n
- * @return {ListNode}
- */
-var removeNthFromEnd = function (head, n) {};
+
+var removeNthFromEnd = function (head, n) {
+  let hare = head,
+    curr = head;
+  while (n--) {
+    hare = hare.next;
+  }
+  while (hare && hare.next) {
+    curr = curr.next;
+    hare = hare.next;
+  }
+  if (!hare) {
+    console.log(head);
+    head = head.next;
+  } else {
+    curr.next = curr.next ? curr.next.next : null;
+  }
+
+  return head;
+};
+
+function ListNode(val, next) {
+  this.val = val === undefined ? 0 : val;
+  this.next = next === undefined ? null : next;
+}
+
+var head = new ListNode(1);
+head.next = new ListNode(2);
+head.next.next = new ListNode(3);
+head.next.next.next = new ListNode(4);
+head.next.next.next.next = new ListNode(5);
+
+removeNthFromEnd(head, 2);
