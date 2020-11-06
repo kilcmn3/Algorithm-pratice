@@ -61,10 +61,10 @@ function ListNode(val, next) {
   this.next = next === undefined ? null : next;
 }
 
-var head = new ListNode(1);
-head.next = new ListNode(2);
-head.next.next = new ListNode(3);
-head.next.next.next = new ListNode(4);
-head.next.next.next.next = new ListNode(5);
+// var head = new ListNode(1);
+// head.next = new ListNode(2);
+// head.next.next = new ListNode(3);
+// head.next.next.next = new ListNode(4);
+// head.next.next.next.next = new ListNode(5);
 
-removeNthFromEnd(head, 2);
+// removeNthFromEnd(head, 2);
