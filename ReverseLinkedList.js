@@ -15,7 +15,7 @@ Here's a sample linked list node class:
 }
 */
 
-  function reverse(headOfList) {
+function reverse(headOfList) {
   let currentNode = headOfList;
   let previousNode = null;
   let nextNode = null;
@@ -38,13 +38,11 @@ Here's a sample linked list node class:
 
 var headOfList = {
   value: 1,
-  next:{
+  next: {
     value: 2,
-    next:{
-      value:3,
-      next:{
-        value:5
-      }
-    }
-  }
-}
+    next: {
+      value: 3,
+      next: null,
+    },
+  },
+};
