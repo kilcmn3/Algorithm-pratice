@@ -13,6 +13,7 @@ var middleNode = function(head) {
     return lo;
 };
 
+
 var head = {
   val: 1,
   next: {
