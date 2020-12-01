@@ -30,11 +30,22 @@ Note:
 0 ≤ N ≤ 30.
 */
 
-var fibanocci = function (N) {
-  if (N === 0 || N === 1) {
-    return N;
-  }
-  return fibanocci(N - 2) + fibanocci(N - 1);
+var fibanocci = function (n) {
+
+    if(n === 0) return 0
+    if(n === 1 || n === 2) return 1
+
+    let left = 0
+    let right = 1
+    let previous = left
+
+    for(let i = 0; i < n; i++){
+      previous = left
+      left =  right;
+      right = previous + right
+    }
+
+    return right;
 };
 
 console.log(fibanocci(12));
