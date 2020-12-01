@@ -31,8 +31,7 @@ Note:
 */
 
 var fibanocci = function (n) {
-  if (n === 0) return 0;
-  if (n === 1 || n === 2) return 1;
+  if (n < 2) return n;
 
   let left = 0;
   let right = 1;
