@@ -46,4 +46,4 @@ var fibanocci = function (n) {
   return right;
 };
 
-console.log(fibanocci(12));
+console.log(fibanocci(100));
