@@ -26,3 +26,5 @@ Constraints:
 0 <= nums.length <= 100
 0 <= nums[i] <= 400
 */
+
+var rob = function (nums) {};
