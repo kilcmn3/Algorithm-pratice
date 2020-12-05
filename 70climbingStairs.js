@@ -28,3 +28,19 @@ Constraints:
 
 1 <= n <= 45
 */
+
+var climbStairs = function (n) {
+  let dp = {};
+
+  function distinctWays(steps) {
+    if (steps <= 2) return steps;
+
+    if (dp[steps] !== undefined) return dp[steps];
+
+    dp[steps] = distinctWays(steps - 2) + distinctWays(steps - 1);
+
+    return dp[steps];
+  }
+
+  return distinctWays(n);
+};
