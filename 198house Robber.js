@@ -27,4 +27,22 @@ Constraints:
 0 <= nums[i] <= 400
 */
 
-var rob = function (nums) {};
+// Reference with Explanation : https://stackoverflow.com/questions/39541824/leetcode-house-robber
+var rob = function (nums) {
+  let dp = {};
+
+  function maxProfit(index) {
+    if (index >= nums.length) return 0;
+
+    if (dp[index] !== undefined) return dp[index];
+
+    dp[index] = Math.max(
+      maxProfit(index + 2) + nums[index],
+      maxProfit(index + 1)
+    );
+
+    return dp[index];
+  }
+
+  return maxProfit(0);
+};
