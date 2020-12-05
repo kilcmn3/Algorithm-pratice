@@ -33,7 +33,7 @@ var climbStairs = function (n) {
   let dp = {};
 
   function distinctWays(steps) {
-    if (steps <= 2) return steps;
+    if (steps <= 3) return steps;
 
     if (dp[steps] !== undefined) return dp[steps];
 
