@@ -24,10 +24,12 @@ Output: []
 
 */
 
-/**
- * @param {number[]} nums
- * @return {number[][]}
+/*
+  @param {number[]} nums
+  @return {number[][]}
  */
+
+// Explanation of three sums https://en.wikipedia.org/wiki/3SUM#cite_note-8
 var threeSum = function (nums) {
   if (nums.length < 3) return [];
 
