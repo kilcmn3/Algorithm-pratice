@@ -24,23 +24,45 @@ Output: []
 
 */
 
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
 var threeSum = function (nums) {
-  // -(a+b)= c
-  if (nums.length <= 2) return [];
+  if (nums.length < 3) return [];
+
+  nums.sort((a, b) => a - b);
+
   let result = [];
 
-  nums.reduce((prev, next, index) => {
-    let sumOfTwo = -(prev + next);
-    let thirdVal = nums.findIndex((target) => target === sumOfTwo);
-    let threeSum = prev + next + thirdVal === 0;
-    let addNums = Math.abs(prev) + Math.abs(next) + Math.abs(thirdVal);
+  for (i = 0; i < nums.length - 2; i++) {
+    let start = i + 1;
+    let end = nums.length - 1;
 
-    if (threeSum) {
-      if (thirval !== prev) {
-        result.push([prev, next, sumOfTwo]);
+    if (nums[i] > 0) break;
+
+    if (i > 0 && nums[i] === nums[i - 1]) continue;
+
+    while (start < end) {
+      let a = nums[i];
+      let b = nums[start];
+      let c = nums[end];
+
+      if (a + b + c === 0) {
+        result.push([a, b, c]);
+
+        while (start < end && nums[start] === nums[start + 1]) start++;
+        while (start < end && nums[end] === nums[end - 1]) end--;
+
+        start = start + 1;
+        end = end - 1;
+      } else if (a + b + c > 0) {
+        end = end - 1;
+      } else {
+        start = start + 1;
       }
     }
-    return prev;
-  });
+  }
+
   return result;
 };
