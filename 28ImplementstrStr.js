@@ -36,19 +36,16 @@ haystack and needle consist of only lower-case English characters.
 var strStr = function (haystack, needle) {
   if (!needle.length) return 0;
 
-  let map = {};
-  let seen = [];
-  for (var i = 0; i < needle.length; i++) {
-    let n = needle[i];
-    map[n] = true;
-  }
+  for (let i = 0; i < haystack.length; i++) {
+    let k = i;
+    let j = 0;
 
-  for (var j = 0; j < haystack.length; j++) {
-    let h = haystack[j];
-
-    if (map[h]) {
+    while (haystack[k] === needle[j] && j < needle.length) {
+      k++;
+      j++;
     }
+    if (j === needle.length) return i;
   }
-  console.log(seen);
-  return seen.length ? seen[0] : -1;
+
+  return -1;
 };
