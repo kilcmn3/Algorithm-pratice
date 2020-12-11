@@ -43,4 +43,36 @@ Since there are two 8's in the top left 3x3 sub-box, it is invalid.
 
 */
 
-var isValidSudoku = function (board) {};
+var isValidSudoku = function (board) {
+  for (let i = 0; i < 9; i++) {
+    let row = new Set();
+    let column = new Set();
+    let subBox = new Set();
+
+    for (let j = 0; j < 0; j++) {
+      let _row = board[i][j];
+      let _column = board[j][i];
+      let _subBox =
+        board[3 * Math.floor(i / 3) + Math.floor(j / 3)][3 * (i % 3) + (j % 3)];
+
+      if (row.has(_row)) {
+        return false;
+      } else {
+        row.add(_row);
+      }
+
+      if (column.has(_column)) {
+        return false;
+      } else {
+        column.add(_column);
+      }
+
+      if (subBox.has(_subBox)) {
+        return false;
+      } else {
+        column.add(_subBox);
+      }
+    }
+  }
+  return true;
+};
