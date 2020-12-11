@@ -28,3 +28,36 @@ Constraints:
 All the integers of nums are unique.
 
 */
+
+var permute = function (nums) {
+  let output = [];
+
+  const swampInPlace = (arrToSwamp, indexA, indexB) => {
+    const temp = arrToSwamp[indexA];
+    arrToSwamp[indexA] = arrToSwamp[indexB];
+    arrToSwamp[indexB] = temp;
+  };
+
+  const generate = (n, heapArr) => {
+    if (n === 1) {
+      output.push(heapArr.slice());
+      return;
+    }
+
+    generate(n - 1, heapArr);
+
+    for (let i = 0; i < n - 1; i++) {
+      if (n % 2 === 0) {
+        swampInPlace(heapArr, i, n - 1);
+      } else {
+        swampInPlace(heapArr, 0, n - 1);
+      }
+
+      generate(n - 1, heapArr);
+    }
+  };
+
+  generate(nums.length, nums.slice());
+
+  return output;
+};
