@@ -26,3 +26,14 @@ Constraints:
 -231 <= n <= 231-1
 -104 <= xn <= 104
 */
+
+var myPow = function (x, n) {
+  if (n === 0) return 1;
+
+  let sign = Math.abs(n);
+
+  let output =
+    n % 2 === 0 ? myPow(x * x, sign / 2) : myPow(x * x, (sign - 1) / 2) * x;
+
+  return n < 0 ? 1 / output : output;
+};
