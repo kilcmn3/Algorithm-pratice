@@ -1,4 +1,5 @@
 /*
+
 https://leetcode.com/problems/fibonacci-number/
 
 The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, 
@@ -30,6 +31,24 @@ Note:
 0 ≤ N ≤ 30.
 */
 
+//method1
+var fib = function (N) {
+  if (N < 2) {
+    return N;
+  }
+
+  let dp = {};
+
+  if (dp[N] !== undefined) {
+    return dp[N];
+  } else {
+    dp[N] = fib(N - 1) + fib(N - 2);
+  }
+
+  return dp[N];
+};
+
+//method2
 var fibanocci = function (n) {
   if (n < 2) return n;
 
