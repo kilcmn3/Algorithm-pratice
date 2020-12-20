@@ -69,6 +69,7 @@ console.log(fibanocci(100));
 
 //method3
 
+//dp method
 var fib = function (N) {
   if (N < 2) {
     return N;
