@@ -66,3 +66,19 @@ var fibanocci = function (n) {
 };
 
 console.log(fibanocci(100));
+
+//method3
+
+var fib = function (N) {
+  if (N < 2) {
+    return N;
+  }
+
+  let dp = [0, 1];
+
+  for (let i = 2; i <= N; i++) {
+    dp.push(dp[i - 2] + dp[i - 1]);
+  }
+
+  return dp.pop();
+};
